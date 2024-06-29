@@ -75,8 +75,6 @@ public class PlayerController : MonoBehaviour
         float _cameraRotationX = _xRotation * lookSensitivity;
         currentCameraRotationX += _cameraRotationX;
         currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
-        Debug.Log(myRigid.rotation);
-        Debug.Log(myRigid.rotation.eulerAngles);
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0, 0);
     }
     private void CharacterRotation()
