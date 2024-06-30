@@ -215,4 +215,8 @@ public class Gun_Controller : MonoBehaviour
             }
         }
     }
+    public Gun GetGun()
+    {
+        return currentGun;
+    }
 }
