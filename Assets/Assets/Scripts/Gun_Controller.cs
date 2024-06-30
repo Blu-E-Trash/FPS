@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Gun_Controller : MonoBehaviour
@@ -120,16 +121,17 @@ public class Gun_Controller : MonoBehaviour
 
     }
 
-    private void Hit()
+    private void Hit() 
     {
-        if(Physics.Raycast(theCam.transform.position,theCam.transform.forward+
-            new Vector3(Random.Range(-theCrosshair.GetAccuracy()-currentGun.accuracy, theCrosshair.GetAccuracy() + currentGun.accuracy),
-                        Random.Range(-theCrosshair.GetAccuracy() - currentGun.accuracy, theCrosshair.GetAccuracy() + currentGun.accuracy),
-                        0)
-            ,out hitinfo, currentGun.range))
+        if (Physics.Raycast(theCam.transform.position, theCam.transform.forward +
+            new Vector3(
+                Random.Range(-theCrosshair.GetAccuracy() - currentGun.accuracy, theCrosshair.GetAccuracy() + currentGun.accuracy),
+                Random.Range(-theCrosshair.GetAccuracy() - currentGun.accuracy, theCrosshair.GetAccuracy() + currentGun.accuracy),
+                0), out hitinfo, currentGun.range
+            ))
         {
-            GameObject clone = Instantiate(hit_effect_prefab, hitinfo.point, Quaternion.LookRotation(hitinfo.normal));
-            Destroy(clone, 2f);
+            var clone = Instantiate(hit_effect_prefab, hitinfo.point, Quaternion.LookRotation(hitinfo.normal));
+            Destroy(clone, 2f); 
         }
     }
     private void PlaySE(AudioClip _clip)

@@ -58,7 +58,7 @@ public class Crosshair : MonoBehaviour
         else if (theGunController.GetFineSightMode()) 
             gunAccuracy = 0.001f;  
         else 
-            gunAccuracy = 0.0035f;  
+            gunAccuracy = 0.035f;  
 
         return gunAccuracy;
     }
