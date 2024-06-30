@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hand_Controller : CloseWeaponController
+public class PickAxeController : CloseWeaponController
 {
-    public static bool isActive = false;
+    public static bool isActive = true;
+
+    private void Start()
+    {
+        WeaponManager.currentWeapon = currentCloseWeapon.GetComponent<Transform>();
+        WeaponManager.currentWeaponAnim = currentCloseWeapon.anim;
+    }
     void Update()
     {
         if (isActive)
@@ -24,6 +30,7 @@ public class Hand_Controller : CloseWeaponController
             yield return null;
         }
     }
+
     public override void CloseWeaponChange(CloseWeapon _closeWeapon)
     {
         base.CloseWeaponChange(_closeWeapon);

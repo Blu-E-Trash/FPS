@@ -6,7 +6,7 @@ using UnityEngine;
 public class Gun_Controller : MonoBehaviour
 {
     //활성화 여부
-    public static bool isActive = true;
+    public static bool isActive = false;
 
     [SerializeField]
     private Gun currentGun;
