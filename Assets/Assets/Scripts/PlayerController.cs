@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         //상하 카메라 회전
         float _xRotation = Input.GetAxisRaw("Mouse Y");
         float _cameraRotationX = _xRotation * lookSensitivity;
-        currentCameraRotationX += _cameraRotationX;
+        currentCameraRotationX -= _cameraRotationX;
         currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0, 0);
     }

@@ -26,7 +26,7 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    #endregion
+    #endregion singleton
 
     public AudioSource[] audioSourceEffects;
     public AudioSource audioSourgeBGM;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AxeController : CloseWeaponController
 {
-    public static bool isActive = true;
+    public static bool isActive = false;
 
     private void Start()
     {
