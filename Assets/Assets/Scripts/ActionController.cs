@@ -17,6 +17,8 @@ public class ActionController : MonoBehaviour
     //ÇÊÄÄ
     [SerializeField]
     private Text acntionText;
+    [SerializeField]
+    private Inventory theInventory;
 
     void Update()
     {
@@ -39,6 +41,7 @@ public class ActionController : MonoBehaviour
             if(hitInfo.transform != null)
             {
                 Debug.Log(hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "È¹µæÇÔ");
+                theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();
             }
