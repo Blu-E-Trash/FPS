@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   itemName: Rock
+  itemDecs: "\uB3CC\uCABC\uAC00\uB9AC\uB2E4."
   itemType: 2
   itemImage: {fileID: 21300000, guid: 8fc5f4f5a7502aa439c6d1940d0b5c62, type: 3}
   itemPrefab: {fileID: 8934000870553620326, guid: d4344d9351e392c488947a26ef87e078, type: 3}

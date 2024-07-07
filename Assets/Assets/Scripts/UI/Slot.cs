@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,IDragHandler,IEndDragHandler,IDropHandler
+public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, IPointerClickHandler, IBeginDragHandler,IDragHandler,IEndDragHandler,IDropHandler
 {
     public Item item;
     public int itemCount;
@@ -18,6 +18,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,IDrag
 
     private ItemEffectDataBase theItemEffectDataBase;
     private WeaponManager theWeaponManager;
+
 
     void Start()
     {
@@ -133,5 +134,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,IDrag
         else
             DragSlot.instance.dragSlot.ClearSlot();
 
+    }
+
+    //마우스가 슬롯에 들어갈떄
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (item != null)
+        {
+            theItemEffectDataBase.ShowToolTip(item,transform.position);
+        }
+    }
+    //슬롯에서 나갈떄
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        theItemEffectDataBase.HideToolTip();
     }
 }
