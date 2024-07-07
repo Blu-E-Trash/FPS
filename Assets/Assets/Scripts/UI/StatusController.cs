@@ -182,6 +182,19 @@ public class StatusController : MonoBehaviour
         if (currentDp <= 0)
             Debug.Log("Player`s Dp is 0");
     }
+    public void IncreaseSP(int _count)
+    {
+        if (currentSp + _count < SP)
+            currentSp += _count;
+        else
+            currentSp = SP;
+    }
+    public void DecreaseSP(int _count)
+    {
+        currentSp -= _count;
+        if (currentSp <= 0)
+            Debug.Log("Player`s Sp is 0");
+    }
     public void IncreaseHungry(int _count)
     {
         if (currentHungry + _count < hungry)
