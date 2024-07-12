@@ -22,6 +22,8 @@ public class Gun_Controller : MonoBehaviour
     public bool isFineSightMode = false;
 
     private RaycastHit hitinfo;
+    [SerializeField] 
+    private LayerMask layerMask;
     [SerializeField]
     private Camera theCam;
     [SerializeField]
@@ -127,8 +129,7 @@ public class Gun_Controller : MonoBehaviour
             new Vector3(
                 Random.Range(-theCrosshair.GetAccuracy() - currentGun.accuracy, theCrosshair.GetAccuracy() + currentGun.accuracy),
                 Random.Range(-theCrosshair.GetAccuracy() - currentGun.accuracy, theCrosshair.GetAccuracy() + currentGun.accuracy),
-                0), out hitinfo, currentGun.range
-            ))
+                0), out hitinfo, currentGun.range,layerMask))
         {
             var clone = Instantiate(hit_effect_prefab, hitinfo.point, Quaternion.LookRotation(hitinfo.normal));
             Destroy(clone, 2f); 
