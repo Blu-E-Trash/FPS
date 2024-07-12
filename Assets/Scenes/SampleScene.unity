@@ -16495,7 +16495,7 @@ GameObject:
   - component: {fileID: 1983734083}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: NPC
+  m_TagString: WeakAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16515,19 +16515,20 @@ MonoBehaviour:
   animalName: Pig
   hp: 2
   walkSpeed: 2
-  runSpeed: 0
+  runSpeed: 4
+  turningSpeed: 0.5
   walkTime: 5
   waitTime: 4
   runTime: 3
   anim: {fileID: 1407500447}
   rigid: {fileID: 1983734081}
   boxCol: {fileID: 1983734080}
-  sound_pig_Normal:
+  sound_Normal:
   - {fileID: 8300000, guid: 26040d04265f9ab40992249b041b69b1, type: 3}
   - {fileID: 8300000, guid: 7f7b4c21820c13c4ca65e104bafae4ff, type: 3}
   - {fileID: 8300000, guid: b2bcd7412579a04448d8e6374d35e9ad, type: 3}
-  sound_pig_Hurt: {fileID: 8300000, guid: f9971fe2952194a4993a83d31971aa1c, type: 3}
-  sound_pig_Dead: {fileID: 8300000, guid: fffbed6d162d77e458f2ec089d7b5137, type: 3}
+  sound_Hurt: {fileID: 8300000, guid: f9971fe2952194a4993a83d31971aa1c, type: 3}
+  sound_Dead: {fileID: 8300000, guid: fffbed6d162d77e458f2ec089d7b5137, type: 3}
 --- !u!65 &1983734080
 BoxCollider:
   m_ObjectHideFlags: 0
