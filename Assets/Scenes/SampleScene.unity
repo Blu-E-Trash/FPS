@@ -11144,11 +11144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSourceEffects:
-  - {fileID: 1825340210}
   - {fileID: 1825340209}
   - {fileID: 1825340208}
   - {fileID: 1825340207}
   - {fileID: 1825340205}
+  - {fileID: 1825340204}
   - {fileID: 1825340204}
   audioSourgeBGM: {fileID: 1825340204}
   playSoundName:
@@ -11169,6 +11169,12 @@ MonoBehaviour:
     clip: {fileID: 0}
   - name: 
     clip: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+  - name: Animal_Hit
+    clip: {fileID: 8300000, guid: 57bd9608e992f004fa9c946b0cd57930, type: 3}
   bgmSounds: []
 --- !u!4 &1825340212
 Transform:
@@ -16473,9 +16479,10 @@ GameObject:
   - component: {fileID: 1983734081}
   - component: {fileID: 1983734080}
   - component: {fileID: 1983734079}
+  - component: {fileID: 1983734083}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16495,11 +16502,19 @@ MonoBehaviour:
   animalName: Pig
   hp: 2
   walkSpeed: 2
+  runSpeed: 0
   walkTime: 5
   waitTime: 4
+  runTime: 3
   anim: {fileID: 1407500447}
   rigid: {fileID: 1983734081}
   boxCol: {fileID: 1983734080}
+  sound_pig_Normal:
+  - {fileID: 8300000, guid: 26040d04265f9ab40992249b041b69b1, type: 3}
+  - {fileID: 8300000, guid: 7f7b4c21820c13c4ca65e104bafae4ff, type: 3}
+  - {fileID: 8300000, guid: b2bcd7412579a04448d8e6374d35e9ad, type: 3}
+  sound_pig_Hurt: {fileID: 8300000, guid: f9971fe2952194a4993a83d31971aa1c, type: 3}
+  sound_pig_Dead: {fileID: 8300000, guid: fffbed6d162d77e458f2ec089d7b5137, type: 3}
 --- !u!65 &1983734080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16545,6 +16560,111 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1983734083
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983734078}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5
+  MaxDistance: 30
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.15435538
+      value: 0.9719391
+      inSlope: -3.0011995
+      outSlope: -3.0011995
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.42675275
+      value: 0.26989746
+      inSlope: -0.7502999
+      outSlope: -0.7502999
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9923706
+      value: 0
+      inSlope: -0.33346638
+      outSlope: -0.33346638
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0010375977
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2018144020
 GameObject:
   m_ObjectHideFlags: 0
