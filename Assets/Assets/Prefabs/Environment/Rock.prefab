@@ -66,6 +66,8 @@ MonoBehaviour:
   go_Rock: {fileID: 2844650767116427079}
   go_Debris: {fileID: 2844650767636701017}
   go_EffectPrefab: {fileID: 1393704341545710044, guid: 7205dd8431330314c95a7195073ea9fb, type: 3}
+  go_rock_item_prefab: {fileID: 0}
+  count: 0
   strikeSound: pickaxe_rock_crash
   destroySound: pickaxe_striking_rock_benboncan
 --- !u!1001 &3151203747607749128
@@ -1101,6 +1103,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e0e3f506784cff342891478e5a566237, type: 3}
   m_PrefabInstance: {fileID: 3151203748027130390}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &5919846236626646859
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844650767116427079}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &3184584116254541309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0e3f506784cff342891478e5a566237, type: 3}
