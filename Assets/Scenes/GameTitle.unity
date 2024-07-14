@@ -691,6 +691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1442828231}
   - component: {fileID: 1442828232}
+  - component: {fileID: 1442828233}
   - component: {fileID: 1442828230}
   - component: {fileID: 1442828229}
   - component: {fileID: 1442828228}
@@ -796,6 +797,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: GameStage
+--- !u!114 &1442828233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442828227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bc26d5fef6817469f9f92da93e751f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659972967
 GameObject:
   m_ObjectHideFlags: 0
