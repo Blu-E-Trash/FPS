@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour
     private float crouchSpeed;
     [SerializeField]
     private float jumpForce;
+    [SerializeField]
+    private float swimSpeed;
+    [SerializeField]
+    private float swinFastSpeed;
+    [SerializeField]
+    private float upSwimSpeed;
 
     private bool isWalk = false;
     private bool isRun = false;
@@ -59,9 +65,13 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.canPlayerMove)
         {
+            WaterCheck();
             IsGround();
             TryJump();
-            TryRun();
+            if (!GameManager.isWater)
+            {
+                TryRun();
+            }
             TryCrouch();
             Move();
             MoveCheck();
@@ -70,7 +80,16 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
+    private void WaterCheck()
+    {
+        if (GameManager.isWater)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+                applySpeed = swinFastSpeed;
+            else
+                applySpeed = swimSpeed;
+        }
+    }
     private void Move()
     {
         float _moveDirX = Input.GetAxisRaw("Horizontal");
@@ -131,10 +150,18 @@ public class PlayerController : MonoBehaviour
     }
     private void TryJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&& isGround&&theStatusController.GetCurrentSP()>0)
+        if (Input.GetKeyDown(KeyCode.Space)&& isGround&&theStatusController.GetCurrentSP()>0 && !GameManager.isWater)
         {
             Jump();
         }
+        else if(Input.GetKeyDown(KeyCode.Space) && GameManager.isWater)
+        {
+            UpSwim();
+        }
+    }
+    private void UpSwim()
+    {
+        myRigid.velocity = transform.up * upSwimSpeed;
     }
     private void Jump()
     {
